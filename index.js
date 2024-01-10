@@ -470,11 +470,32 @@ console.log(message);
 // Don't forget to call your functions :)
 
 // Create a function called sayGreeting and PRINT 'Hello, ma'amsir!'
-
+function sayGreeting() {
+    console.log('Hello, ma amsir!');
+  }
+  sayGreeting();
+  
 // Create a function that takes a string as a parameter. PRINT 'This is my (STRING)'. Please replace the (STRING) with the parameter. Don't play with me haha.
+function printString(myString) {
+  console.log('This is my ' + myString);
+}
 
+printString('Dont play with me haha.');
 
 // Create a function called add that takes in three number parameters. Create 3 variables and assign numerical values to them. Invoke your add() and pass in those three variables as arguments.
+
+function add(num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+
+const number1 = 5;
+const number2 = 10;
+const number3 = 15;
+
+const result = add(number1, number2, number3);
+
+console.log(result);
+
 
 // Create a function called fightClub() that accepts a name parameter.  If the name:
 // 'Teo' RETURN '1st rule: You do not talk about Fight Club.'
@@ -483,11 +504,50 @@ console.log(message);
 // 'Devin' RETURN '4th rule: Only two guys to a fight.'
 // Anything else, RETURN 'No shirts
 
+
+function fightClub(name) {
+  switch (name) {
+    case 'Teo':
+      return '1st rule: You do not talk about Fight Club.';
+    case 'Manara':
+      return '2nd rule: YOU DO NOT TALK ABOUT FIGHT CLUB.';
+    case 'Liv':
+      return '3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over.';
+    case 'Devin':
+      return '4th rule: Only two guys to a fight.';
+    default:
+      return 'No shirts, no shoes, no service.';
+  }
+}
+console.log(fightClub('Teo'));
+
+
 // Create a function called hello() that prints 'Hello'. Return an anonymous function inside hello() and have it print 'Goodbye'. Invoke your hello function in some way to see Hello and Goodbye in the console.
 
+
+function hello() {
+  process.stdout.write('Hello '); 
+  return function() {
+    console.log('Goodbye');
+  };
+}
+
+const goodbyeFunction = hello();
+goodbyeFunction();
+
 // Create a function expression with your first name as the variable and then print your first and last name
+function myFirstName(myfirstname) {
+  console.log(myfirstname + ' Yazbeck');
+}
+myFirstName('Alan');
 
 // Create an arrow function that accepts a number and have it return that number doubled
+
+function doubleNumber(number) {
+  return number * 2;
+}
+
+console.log(doubleNumber(2)); 
 
 // =================================================
 //                     OBJECTS
@@ -495,16 +555,21 @@ console.log(message);
 
 // Create an object and call it human. Add a name, age, and location property. Give the properties values.
 
-
+const human = {
+  name: 'Alan',
+  age: 29,
+  location: 'Boston'
+};
 
 
 // Access the name using dot notation
-
+console.log(human.name);
 
 // Access the age using square brackets
-
+console.log(human['age']);
 // Use object destructuring to access location
-
+const { location } = human;
+console.log (location);
 // ACCESS Granted
 const bulbasaur = {
   name: 'Bulbasaur',
@@ -524,18 +589,43 @@ const bulbasaur = {
 
 // Print overgrow
 
+console.log(bulbasaur.abilities[0].ability);
+
+
+
 // Print cut
+console.log(bulbasaur.moves[2]);
 
 
 // Print Bulbahhhh!!!!!
 
-
+console.log(bulbasaur.sound());
 // Add a height of 7 to bulbasaur using the dot notation. (Don't change bulbasaur object manually)
+
+bulbasaur.height = 7;
+
+console.log(bulbasaur);
+
 
 // Add a property called order and assign it a value of 1 using the square brackets. (Don't change bulbasaur object manually)
 
+
+bulbasaur['order'] = 1;
+
+console.log(bulbasaur);
+
+
 // Print an array that contains every single properties in bulbasaur
 
+const array11 = Object.keys(bulbasaur);
+
+console.log(array11);
+
 // Print every single properties one by one in the console
+for (let property in bulbasaur) {
+  console.log(property);
+}
 
 // Print an array that contains every single values in bulbasaur
+
+console.log(Object.values(bulbasaur));
